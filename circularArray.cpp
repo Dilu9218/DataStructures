@@ -15,11 +15,12 @@ int main(void)
 	
 	int i;
 	int array_front=0;
+	int last_message_number=0;
 	string message;
 	for (i = 0; i < 10; i++){
 		cout << "enter message :";
 		cin >> message;
-
+		last_message_number+=1;
 		if ((i%k)==0 ) {
 				array_front += k;
 				cout << "array front is " << array_front-k << endl;
@@ -36,7 +37,7 @@ int main(void)
 	
 	cout << "retrieve message number\n";
 	cin >> msg_number;
-	if (msg_number > (array_front-k)) {
+	if (msg_number > (last_message_number-k)) {
 		cout << "message is: " << a[(msg_number %k)] << endl;
 	}
 	else{
